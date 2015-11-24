@@ -1,0 +1,21 @@
+.main{
+	width: 95%;
+	margin-left: 2%;
+}
+.main_div_btn {
+	width: auto;
+	padding: 20% 10% 10% 10%;
+}
+.t_btn{
+	width: 40%;
+	float: left;
+	margin-left: 10%;
+}
+.s_btn{
+	width: 40%;
+	float: right;
+}
+.loginback{
+	background-image: url("/logback.jpg");
+	padding: 5%;
+}
