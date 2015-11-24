@@ -1,5 +1,5 @@
 .main{
-	width: 95%;
+	width: 97%;
 	margin-left: 2%;
 }
 .main_div_btn {
@@ -16,6 +16,9 @@
 	float: right;
 }
 .loginback{
-	background-image: url("/logback.jpg");
+	background-image: url("imgs/logback.jpg");
 	padding: 5%;
+}
+.secques{
+	font-size: 1.25em;
 }
