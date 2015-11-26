@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 .main{
 	width: 97%;
 	margin-left: 2%;
@@ -6,6 +7,12 @@
 	width: auto;
 	padding: 20% 10% 10% 10%;
 }
+.main_div_btn button{
+		font-size: 1.25em;
+		font-family: Raleway, sans-serif;
+		
+			
+	}
 .t_btn{
 	width: 40%;
 	float: left;
@@ -21,4 +28,8 @@
 }
 .secques{
 	font-size: 1.25em;
+}
+
+#loginButtons{
+	visibility: visible;
 }

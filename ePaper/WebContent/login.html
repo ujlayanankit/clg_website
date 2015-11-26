@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>E-Test</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/logincss.css">
+	
 	 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    
+     <script src="js/loginjs.js"></script>
+     <script src="js/forgetjs.js"></script>
 </head>
 <body class="main">
 
 	<!-- Nav bar start-->
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">		
 		<div class="navbar-header">
@@ -31,120 +36,43 @@
 			</button>
 			<a class="navbar-brand" href="#"><img src="imgs/mietLogo.jpeg" class="img-thumbnail img-responsive" alt="MIET Group" width="108" height="auto"></a>
 		</div>
-		<div class="navbar-collapse collapse">
-		<ul class="nav navbar-nav navbar-right ">
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact us</a></li>
-			<li class="active"><a href="#">Login</a></li>
-			<li><a href="#">Help</a></li>
+		<div class="navbar-collapse collapse navbar-right">
+		<ul class="nav navbar-nav">
+			<li><a href="#body">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li  class="active"><a href="#">Login</a></li>
+                        <li><a href="#">SignUp</a></li>
+                       <li><a href="#">Help</a>
+                        <li><a href="#">Contact</a></li>
 		</ul>	
 		</div>
 	</div>
 	</nav>
 
 
+
+
+
+
+
+
+
+
+
 	<!-- site start-->
-	<div class="container-fluid">
+	<div class="container-fluid" id="loginButtons">
 		<div class="row main_div_btn">
-			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3">
-	 			<button type="button" class="btn btn-default">I m a Teacher.</button>
+			<div class="col-md-6 col-sm-6 col-xs-6 col-md-push-3 col-sm-push-3">
+	 			<button type="button" class="btn btn-primary" id="Teacher_login" onclick="teacherLogin();">I'm a<br/>Teacher</button>
 			</div>
-			<div class="col-md-6 col-sm-6 col-md-push-1 col-sm-push-1">
-				<button type="button" class="btn btn-default">I m a Student.</button>
+			<div class="col-md-6 col-sm-6 col-xm-6 col-md-push-1 col-sm-push-1 col-xs-push-1">
+				<button type="button" class="btn btn-default" id="student_login" onclick="studentLogin();">I'm a<br/>Student</button>
 			</div>
 		</div>
 	</div>
-	<div class="Container-fluid loginback">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well">
-				<form>
-					<div class="form-group">
-						<h2 class="text-center">Login to your account</h2>
-  					</div>
-  					<div class="form-group">
-    				 <label for="InputEmail">Email address</label>
-   					 <input type="email" class="form-control" id="InputEmail1" placeholder="Email">
-  					</div>
-  					<div class="form-group">
-   					 <label for="InputPassword">Password</label>
-   					 <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
-  					</div>
-  				<div class="form-group">	
-  					<div class="form-inline">	
-  							<div class="checkbox">
-        					<label><input type="checkbox"> Remember me. </label>
-        					
-      					</div>
-      				
-      					<button type="submit" class="btn btn-default pull-right">Login</button>
-    					
-    				</div>	
-   					
-  				</div>
-  				<div class="form-group">
-  					<label for="ForgotPass">Forgot Your Password ? 
-						<a href="#">Click Here </a>					
-					</label>
-  					
-					 				
-  				</div>
-  				<div class="form-group">
-				<label for="CreateAccount">
-					Don't have an account yet ?&nbsp; 
-					<a href="#" id="register-btn">Create an account</a>
-				</label>
-			</div>
-  				</form>
-  				
-  			</div>
-		</div>
-	</div>
+	
 
-
-
-
-
-
-
-		<div class="Container-fluid loginback">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well">
-				<form>
-					<div class="form-group">
-						<h2 class="text-center">Forget Password ?</h2>
-  					</div>
-  					<div class="form-group">
-    				 <label for="InputEmail">Enter your e-mail address below to reset your password.</label>
-   					 <input type="email" class="form-control" id="InputEmailRset" placeholder="Email">
-  					</div>
-  					<div class="form-group">
-  						
-  						<label for="InputSecurity">Select a Security Question.</label>
-  						<select class="form-control" name="Securty" id="secQues">
-  							<option value="" selected disabled="disabled">Select Your security Question </option>
-  						</select>
-  					</div>
-  					<div class="form-group">	
-  						
-  						<label for="InputSecurityAns">Answer For Security Question.</label>
-   						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer">
-  					
-  						
-  					</div>
-  				
-   					<div class="form-group">
-  					<button type="submit" class="btn btn-default pull-right">Submit</button>
-  										 				
-  				</div>
-  				
-  				</form>
-  				
-  			</div>
-		</div>
-	</div>
-
-
+	<div class="container-fluid" id="showLogin"></div>
 
 
 
@@ -156,55 +84,7 @@
 
 
 	
-	<div class="Container-fluid loginback">
-		<div class="row">
-			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well">
-				<form>
-					<div class="form-group">
-						<h2 class="text-center">Register for a new account</h2>
-  					</div>
-  					<div class="form-group">
-   					 <label for="InputNameRS">Full Name</label>
-   					 <input type="text" class="form-control" id="InputNameRS" placeholder="Name">
-  					</div>
-  					<div class="form-group">
-   					 <label for="InputRollRS">Roll Number</label>
-   					 <input type="number" class="form-control" id="InputRollRS" placeholder="Roll Number">
-  					</div>
-  					<div class="form-group">
-   					 <label for="InputF_ID">Faculty ID</label>
-   					 <input type="number" class="form-control" id="InputF_ID" placeholder="Faculty ID">
-  					</div>
-  					<div class="form-group">
-    				 <label for="InputEmailRS">Email address</label>
-   					 <input type="email" class="form-control" id="InputEmailRS" placeholder="Email">
-  					</div>
-  					<div class="form-group">
-  						
-  						<label for="InputSecurity">Select a Security Question.</label>
-  						<select class="form-control" name="Securty" id="secQues">
-  							<option value="" selected disabled="disabled">Select Your security Question </option>
-  						</select>
-  					</div>
-  					<div class="form-group">	
-  						
-  						<label for="InputSecurityAns">Answer For Security Question.</label>
-   						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer">
-  					
-  						
-  					</div>
-  					
-  				
-  				<div class="form-group">
-  					<button type="submit" class="btn btn-default pull-right">SignUp</button>
-  										 				
-  				</div>
-  				
-  				</form>
-  				
-  			</div>
-		</div>
-	</div>
+	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
