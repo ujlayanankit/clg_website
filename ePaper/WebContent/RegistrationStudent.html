@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Sign In</title>
+    <title>Sign Up</title>
 
        <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/logincss.css">
@@ -17,7 +17,9 @@
     <![endif]-->
   </head>
   <body class="main">
-     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  
+  
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -28,49 +30,59 @@
 			</button>
 			<a class="navbar-brand" href="index.html"><img src="img/slider/mietLogo.jpeg" class="img-thumbnail img-responsive" alt="MIET Group" width="108" height="auto" STYLE="position:absolute; TOP:12px; LEFT:50px; WIDTH:100px; HEIGHT:70px; opacity: 0.7;
     filter: alpha(opacity=70);" ></a></div>
-		</div>
+	
+	</div>
 	</nav>
-   
-    <div class="Container-fluid loginback">
+  
+  
+  
+  
+  
+   <div class="Container-fluid loginback">
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well">
 				<form>
 					<div class="form-group">
-						<h2 class="text-center">Login to your account</h2>
+						<h2 class="text-center">Register for a new account</h2>
   					</div>
   					<div class="form-group">
-    				 <label for="InputEmail">Email address</label>
-   					 <input type="email" class="form-control" id="InputEmail1" placeholder="Email">
+   					 <label for="InputNameRS">Full Name</label>
+   					 <input type="text" class="form-control" id="InputNameRS" placeholder="Name">
   					</div>
   					<div class="form-group">
-   					 <label for="InputPassword">Password</label>
-   					 <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+   					 <label for="InputRollRS">Roll Number</label>
+   					 <input type="number" class="form-control" id="InputRollRS" placeholder="Roll Number">
   					</div>
-  				<div class="form-group">	
-  					<div class="form-inline">	
-  							<div class="checkbox">
-        					<label><input type="checkbox"> Remember me. </label>
-        					
-      					</div>
-      				
-      					<button type="submit" class="btn btn-default pull-right">Login</button>
-    					
-    				</div>	
-   					
-  				</div>
-  				<div class="form-group">
-  					<label for="ForgotPass">Forgot Your Password ? 
-						<a href="ForgotPass.html">Click Here </a>					
-					</label>
   					
-					 				
-  				</div>
+  					<div class="form-group">
+    				 <label for="InputEmailRS">Email address</label>
+   					 <input type="email" class="form-control" id="InputEmailRS" placeholder="Email">
+  					</div>
+  					<div class="form-group">
+  						
+  						<label for="InputSecurity">Select a Security Question.</label>
+  						<select class="form-control" name="Securty" id="secQues">
+  							<option value="" selected disabled="disabled">Select  </option>
+  						</select>
+  					</div>
+  					<div class="form-group">	
+  						
+  						<label for="InputSecurityAns">Answer For Security Question.</label>
+   						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer">
+  					
+  						
+  					</div>
+  					
+  				
   				<div class="form-group">
-				<label for="CreateAccount">
-					Don't have an account yet ?&nbsp; 
-					<a href="SignUp.html" id="register-btn">Create an account</a>
-				</label>
-			</div>
+  					<button type="submit" class="btn btn-default pull-right">SignUp</button>
+  				</div>
+  				
+  				<div class="form-group">
+  				<a href="SignUp.html"><input type="button" class="btn btn-default pull-left" value="Back" /></a>
+  				</div>
+  			
+  				
   				</form>
   				
   			</div>

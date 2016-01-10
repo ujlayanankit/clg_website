@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+
 .main{
 	width: 97%;
 	margin-left: 2%;
@@ -30,9 +31,7 @@
 	font-size: 1.25em;
 }
 
-#loginButtons{
-	visibility: visible;
-}
+
 
 
 .btn-effect {
@@ -137,4 +136,17 @@
     box-shadow: 0 -2px 0 rgba(0, 55, 0, 0.15) inset;
     padding: 15px 55px;
     color: #fff;
+}
+
+#signin {
+    background-color: #9b0ae9;
+   visibility: hidden;
+   position: relative;
+}
+#loginButtons {
+	/*visibility: hidden;*/
+}
+
+#aboutTeam {
+	visibility: visible;
 }
