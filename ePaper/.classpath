@@ -12,6 +12,7 @@
 	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/commons-net-3.3/commons-net-3.3.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/commons-net-3.3/commons-net-3.3-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/commons-net-3.3/commons-net-examples-3.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/javamail/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/jaf-1.1.1/activation.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ankitsingh/Desktop/eclipse/jdk8/javamail-1.4.5/mail.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -76,8 +76,8 @@
     					<li><a href="#body">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a class="external" href="SignIn.html">Login</a></li>
-                        <li><a class="external" href="SignUp.html">SignUp</a></li>
-                        <li><a href="#">Help</a>
+                        <li><a class="external" href="Registration.jsp">SignUp</a></li>
+                        <li><a class="external" href="#">Help</a></li>
                         <li><a href="#contact">Contact</a></li>
                    </ul>
                 </nav>
@@ -228,18 +228,18 @@
 						
 						
 						<div class="col-md-7 contact-form wow animated fadeInLeft">
-							<form action="#" method="post">
+							<form action="visitor" method="post">
 								<div class="input-field">
-									<input type="text" name="name" class="form-control" placeholder="Your Name...">
+									<input type="text" name="name" class="form-control" placeholder="Your Name..." required>
 								</div>
 								<div class="input-field">
-									<input type="email" name="email" class="form-control" placeholder="Your Email...">
+									<input type="email" name="email" class="form-control" placeholder="Your Email..." required>
 								</div>
 								<div class="input-field">
-									<input type="text" name="subject" class="form-control" placeholder="Subject...">
+									<input type="text" name="subject" class="form-control" placeholder="Subject..." required>
 								</div>
 								<div class="input-field">
-									<textarea name="message" class="form-control" placeholder="Messages..."></textarea>
+									<textarea name="message" class="form-control" placeholder="Messages..." required></textarea>
 								</div>
 						       	<button type="submit" id="submit" class="btn btn-blue btn-effect">Send</button>
 							</form>
