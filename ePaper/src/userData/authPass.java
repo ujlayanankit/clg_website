@@ -36,9 +36,11 @@ public class authPass extends HttpServlet {
 		String user_pass = request.getParameter("pASSWORD");
 		System.out.println(user_id+ " "+ user_pass);
 		String[] check = auth(user_id,user_pass);
+		System.out.println("asds"+check[0]);
 		if(check[0].equals("not"))
 		{
 			System.out.print("fail");
+			response.sendRedirect("AuthFail.jsp");
 		}
 		else
 		{
@@ -78,20 +80,12 @@ public class authPass extends HttpServlet {
 		    	else
 		    	{
 		    		rtn[0] = "not";
+		    		rtn[1] = "";
+		    		rtn[2] = "";
+		    		rtn[3] = "";
 		    	}
 		    }
-		    
-		   /* if(uv.equals("yes"))
-		    {
-		    	rtn[0] = uv;
-		    	rtn[1] = rs2.getString("FULL_NAME");
-		    	rtn[2] = rs2.getString("USER_TYPE");
-		    	//rtn[3] = Integer.toString(rs2.getInt("USER_ID"));
-		    }
-		    else if(uv.equals("not"))
-		    {
-		    	rtn[0] = uv;
-		    }*/
+		
 		    com.close();
 		    
 	      }catch(Exception p){

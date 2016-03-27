@@ -23,7 +23,7 @@ public class passGen
 		//Encryption code n logic will here. 
 		return password;
 	}
-	public static String getMD5(String input) {
+	private static String getMD5(String input) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] messageDigest = md.digest(input.getBytes());
