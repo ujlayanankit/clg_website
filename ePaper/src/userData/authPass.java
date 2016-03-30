@@ -45,6 +45,7 @@ public class authPass extends HttpServlet {
 		else
 		{
 			System.out.println(" "+ check[0]+ " "+ check[1]+ " "+ check[2] + " "+ check[3]);
+			response.sendRedirect("AuthPassed.jsp");
 		}
 	}
 	private String[] auth(String user_id, String user_pass ) {
