@@ -70,8 +70,11 @@ public class AccCreates extends HttpServlet {
 	    System.out.println("INSERT INTO USERS_ACCOUNTS VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+answer+"',"+IS_AUTHORIZ+"','"+IS_VIEW+"','"+PASSWORD+"','"+U_PASS+"')");
 	      try
 	      {
-	    	Class.forName("oracle.jdbc.driver.OracleDriver");
-		    com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
+	    	  Class.forName("com.mysql.jdbc.Driver");
+		    //	System.out.println("done1");
+		    	com=DriverManager.getConnection("jdbc:mysql://db4free.net:3306/examhai","mitexam","sorry@p");
+	    	//Class.forName("oracle.jdbc.driver.OracleDriver");
+		    //com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
 		    st=com.createStatement();
 		    st.executeUpdate("INSERT INTO USERS_ACCOUNTS VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+answer+"','"+IS_AUTHORIZ+"','"+IS_VIEW+"','"+PASSWORD+"','"+U_PASS+"')");
 		    com.close();

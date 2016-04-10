@@ -40,10 +40,13 @@ public class visitor extends HttpServlet {
 	    Statement st;
 		try
 	      {
-	    	Class.forName("oracle.jdbc.driver.OracleDriver");
-		    com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
-		    st=com.createStatement();
-		    st.executeUpdate("INSERT INTO VISITOR_FEEDBACK VALUES ('"+Name+"','"+Email+"','"+Subject+"','"+Msg+"')");
+	    	//Class.forName("oracle.jdbc.driver.OracleDriver");
+		    //com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
+			Class.forName("com.mysql.jdbc.Driver");
+		    
+		    	com=DriverManager.getConnection("jdbc:mysql://db4free.net:3306/examhai","mitexam","sorry@p");
+			st=com.createStatement();
+		    st.executeUpdate("INSERT INTO VISITOR_FEEDBACK (`NAME`, `EMAIL`, `SUBJECTS`, `MSG`) VALUES ('"+Name+"','"+Email+"','"+Subject+"','"+Msg+"')");
 		    com.close();
 		  }catch(Exception p){
 		  }
