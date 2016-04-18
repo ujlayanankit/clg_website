@@ -17,6 +17,9 @@
     <![endif]-->
     
     <script type="text/javascript" src="js/loginjs.js"></script>
+   
+    <script type="text/javascript" src="js/captch.js"></script>
+    
   </head>
   <body class="main">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -82,9 +85,9 @@
   							<option value="What was the house number and street name you lived in as a child?">
   								What was the house number and street name you lived in as a child?
   							</option>
-  							<option value="others">
+  						<!-- 	<option value="others">
   								Others (Please write your Question and no special character allowed)
-  							</option>
+  							</option> -->
   						</select>
   					</div>
   					
@@ -96,13 +99,15 @@
   						<label for="InputSecurityAns">Answer For Security Question.</label>
    						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer" name="secAnswer" autocomplete="off" required>
   					</div>
-  					
+  					<div class="form-group">
+  						<div id="html_element"></div>
+  					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-default pull-right">SignUp</button>
+						<button type="submit" class="btn btn-primary pull-right">SignUp</button>
 					</div>
   				
 					<div class="form-group">
-						<a href="index.html"><input type="button" class="btn btn-default pull-left" value="Back" /></a>
+						<a href="index.html"><input type="button" class="btn btn-primary pull-left" value="Back" /></a>
 					</div>
   				
   				
@@ -110,9 +115,23 @@
   			</div>
   		</div>
 	</div>
+	
+	<footer id="footer">
+			<div class="container">
+				<div class="row text-center">
+					<div class="footer-content">
+						<p style="color: white; font-size: 1.3em;">Copyright &copy; 2015-2016 <a href="http://www.mitmeerut.ac.in"> <h4> Mit, Meerut </h4></a> </p> 
+					</div>
+				</div>
+			</div>
+		</footer>
 
      <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+         
      <script type="text/javascript">
      $(document).ready(function() {
      document.body.style.backgroundImage = "url('img/slider/banner.jpg')";

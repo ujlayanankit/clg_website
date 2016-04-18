@@ -7,11 +7,8 @@ import java.security.NoSuchAlgorithmException;
 
 public class passGen
 {
-	protected String userPass(String user_Email, String fullName)
-	{
-		String encemail = getMD5(user_Email);
-		String encname = getMD5(fullName);
-		String temp = getMD5(encname+encemail);
+	protected String userPass(String answer) {
+		String temp = getMD5(answer);
 		String password = "";
 		for(int i=0; i<temp.length(); i++)
 		{
@@ -20,7 +17,37 @@ public class passGen
 				password += temp.charAt(i); 
 			}
 		}
-		//Encryption code n logic will here. 
+		return password;
+	}
+	protected String userPass(String gpassword, String upassword)
+	{
+		String encgpass = getMD5(gpassword);
+		String encupass = getMD5(upassword);
+		String temp = getMD5(encupass+encgpass);
+		String password = "";
+		for(int i=0; i<temp.length(); i++)
+		{
+			if(i%4==0)
+			{
+				password += temp.charAt(i); 
+			}
+		}
+		return password;
+	}
+	protected String userPass(String user_Email, String sec_question, String answer)
+	{
+		String encemail = getMD5(user_Email);
+		String encsecq = getMD5(sec_question);
+		String encseca = getMD5(answer);
+		String temp = getMD5(encseca+encsecq+encemail);
+		String password = "";
+		for(int i=0; i<temp.length(); i++)
+		{
+			if(i%4==0)
+			{
+				password += temp.charAt(i); 
+			}
+		}
 		return password;
 	}
 	private static String getMD5(String input) {
@@ -39,4 +66,5 @@ public class passGen
             throw new RuntimeException(e);
         }
     }
+	
 }

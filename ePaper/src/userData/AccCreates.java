@@ -2,9 +2,12 @@ package userData;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +31,11 @@ public class AccCreates extends HttpServlet {
 	String user_Email = request.getParameter("userEmail");
 	String answer = request.getParameter("secAnswer").replaceAll("\'", "");
 	String sec_question = request.getParameter("Security");
+	String recaptcha = request.getParameter("g-recaptcha-response");
+	//System.out.println("Rec:- --* "+ recaptcha + "  ***-- done");
+	
+	
+	
 		try{
 		if(sec_question.equals("others"))
 		{
@@ -51,10 +59,12 @@ public class AccCreates extends HttpServlet {
 		System.out.println(sec_question);
 		System.out.println(answer);*/
 		}
+	
 		catch(NullPointerException nu)
 		{
 			new PrintWriter(response.getWriter()).print("<h3>All Fields are Mendatory.</h3>");
 		}
+		
 		dataEntry(full_Name, user_Type, user_Id, user_Email, sec_question, answer);
 		response.sendRedirect("regCnfm.jsp?mail="+user_Email);
 	}
@@ -63,8 +73,10 @@ public class AccCreates extends HttpServlet {
 		int u_id = Integer.parseInt(user_Id);
 		char IS_AUTHORIZ = 'N';
 		char IS_VIEW = 'N';
-		String PASSWORD = (new passGen().userPass(user_Email,full_Name));
-		String U_PASS = (new passGen().userPass(PASSWORD, "password"));
+		String PASSWORD = (new passGen().userPass(user_Email,sec_question,answer));
+		String genP = (new passGen().userPass(PASSWORD));
+		System.out.println("\n User pass:---  "+ genP +"\n\n");
+		String U_PASS = (new passGen().userPass(PASSWORD, genP));
 		Connection com;
 	    Statement st;
 	    System.out.println("INSERT INTO USERS_ACCOUNTS VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+answer+"',"+IS_AUTHORIZ+"','"+IS_VIEW+"','"+PASSWORD+"','"+U_PASS+"')");

@@ -10,8 +10,6 @@ function studentLogin(){
 } */
 
 
-
-
 function u_id()
 {
 	 $(document).ready(function() {
@@ -52,12 +50,26 @@ function secQuesn()
 
 
 
+/*
 function formVerify()
 {
 	 var U_mail = document.forms["RegForm"]["userEmail"].value;
 	 var U_Otr_Ques = document.forms["RegForm"]["otherSecQues"].value;
-	 //alert(U_mail);
-	 //alert(U_Otr_Ques);
-	
-	// return false;
+	 alert(U_mail);
+	 alert(U_Otr_Ques);
+	function get_action(form) {
+
+var v = grecaptcha.getResponse();
+if(v.length == 0)
+{
+    document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+    return false;
 }
+ if(v.length != 0)
+ {
+    document.getElementById('captcha').innerHTML="Captcha completed";
+    return true; 
+ }
+}
+	 return false;
+}*/

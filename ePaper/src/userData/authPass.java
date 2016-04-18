@@ -56,9 +56,12 @@ public class authPass extends HttpServlet {
 	    String[] rtn ={"","","",""};
 	     try
 	      {
-	    	Class.forName("oracle.jdbc.driver.OracleDriver");
-		    com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
-		    st=com.createStatement();
+	    	//Class.forName("oracle.jdbc.driver.OracleDriver");
+		    //com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
+	    	  Class.forName("com.mysql.jdbc.Driver");
+			    //	System.out.println("done1");
+			    	com=DriverManager.getConnection("jdbc:mysql://db4free.net:3306/examhai","mitexam","sorry@p");
+	    	 st=com.createStatement();
 		    System.out.println("Select PASSWORD from USERS_ACCOUNTS where USER_EMAIL='"+user_id+"'");
 		    rs1=st.executeQuery("Select PASSWORD from USERS_ACCOUNTS where USER_EMAIL='"+user_id+"'");
 		    while(rs1.next())

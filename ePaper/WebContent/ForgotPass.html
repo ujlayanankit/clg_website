@@ -9,6 +9,9 @@
 
        <link href="css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="css/logincss.css">
+		<script type="text/javascript" src="js/captch.js"></script>
+    
+		
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -37,19 +40,19 @@
       
 		<div class="Container-fluid loginback">
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well">
-				<form>
+			<div class="col-md-6 col-sm-6 col-md-push-3 col-sm-push-3 well" style="opacity: 0.85;">
+				<form onsubmit="return formVerify()" action="/forgetP" method="post">
 					<div class="form-group">
 						<h2 class="text-center">Forgot Password ?</h2>
   					</div>
   					<div class="form-group">
     				 <label for="InputEmail">Enter your e-mail address below to reset your password.</label>
-   					 <input type="email" class="form-control" id="InputEmailRset" placeholder="Email">
+   					 <input type="email" class="form-control" id="InputEmailRset" placeholder="Email" name="UEmail" autocomplete="off" required>
   					</div>
   					<div class="form-group">
   						
   						<label for="InputSecurity">Select your Security Question.</label>
-  						<select class="form-control" name="Securty" id="secQues">
+  						<select class="form-control" name="Security" id="secQues">
   							<option value="" selected disabled="disabled">Select Your security Question </option>
   							<option value="What time of the day were you born? (hh:mm)">
   								What time of the day were you born? (hh:mm)
@@ -69,18 +72,21 @@
   					<div class="form-group">	
   						
   						<label for="InputSecurityAns">Answer For Security Question.</label>
-   						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer">
+   						<input type="text" class="form-control" id="InputSecurityAns" placeholder="Answer" name="answer" autocomplete="off" required>
   					
   						
+  					</div>
+  					<div class="form-group">
+  						<div id="html_element"></div>
   					</div>
   				
    					<div class="form-group">
    					
-  					<button type="submit" class="btn btn-default pull-right">Submit</button>
+  					<button type="submit" class="btn btn-info pull-right">Submit</button>
   										 				
   				</div>
   				<div class="form-group">
-  				<a href="SignIn.html"><input type="button" class="btn btn-default pull-left" value="Back" /></a>
+  				<a href="SignIn.html"><input type="button" class="btn btn-info pull-left" value="Back" /></a>
   				</div>
   				
   				</form>
@@ -88,11 +94,23 @@
   			</div>
 		</div>
 	</div>
+	<footer id="footer">
+			<div class="container">
+				<div class="row text-center">
+					<div class="footer-content">
+						<p style="color: white; font-size: 1.3em;">Copyright &copy; 2015-2016 <a href="http://www.mitmeerut.ac.in"> <h4> Mit, Meerut </h4></a> </p> 
+					</div>
+				</div>
+			</div>
+		</footer>
 
       <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
       <script src="js/jquery.min.js"></script>
      <script src="js/bootstrap.min.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
     <script type="text/javascript">
      $(document).ready(function() {
      document.body.style.backgroundImage = "url('img/slider/banner.jpg')";
