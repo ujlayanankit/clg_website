@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@include file="include/conn_open.jsp" %>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -80,7 +81,17 @@
 			<label for="selectSubject">Subject</label>
 			<select class="form-control" name="selectSubject" id="examSubjects" onchange="selSub()" required>
   		 	<option value="" selected disabled="disabled">Select  </option>
-  			
+  		<%	try{
+		   rs=st.executeQuery("Select * from Subject");
+		  while(rs.next())
+			{%>
+		<option value="<%= rs.getString("Sub_Code") %>">     
+     	<%= rs.getString("Sub_Name")%>
+     	</option>
+       	<% }
+  		}
+		catch(Exception e){
+		}%>
   			</select>
   			</div>
   			<div class="form-group">
