@@ -48,7 +48,7 @@ function addRow() {
 		}
 		else
 		{
-		newdiv.innerHTML = '<input type="number" class="form-control" id=\"tabin'+ sec[i]+''+j +'\" placeholder="0" name="" required>';
+		newdiv.innerHTML = '<input type="number" class="form-control" id=\"tabin'+ sec[i]+''+j +'\" placeholder="0" name=\"tabin'+ sec[i]+''+j +'\" required="required">';
 		}
 		newdiv.id = "tab"+sec[i];
 		td[j].appendChild(newdiv);

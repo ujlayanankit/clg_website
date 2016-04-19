@@ -117,8 +117,7 @@
 			</div>
   	</form>
     </div>
-     
-     <div class="col-md-3 well" role="complementary">
+     <!--      <div class="col-md-3 well" role="complementary">
 		<form method="post">
 		<fieldset>   	
      	<legend class="text-center">-Paper-</legend>
@@ -138,7 +137,7 @@
      	</div>
      </form>
      </div>
-     	
+     	-->
     
     </div>
     </div>
