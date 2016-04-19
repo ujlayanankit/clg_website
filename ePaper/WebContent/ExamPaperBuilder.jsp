@@ -73,15 +73,14 @@
          </div>
 		<div class="container bs-docs-container"> 
     	<div class="row">
-    	<div class="col-md-9 well">
+    	<div class="col-md-6 col-md-offset-3 well">
     	
    		<form>
 			<div class="form-group">
 			<label for="selectSubject">Subject</label>
 			<select class="form-control" name="selectSubject" id="examSubjects" onchange="selSub()" required>
   		 	<option value="" selected disabled="disabled">Select  </option>
-  			<option value="ERP" > ERP </option>
-  			<option value="SPM" > SPM </option>
+  			
   			</select>
   			</div>
   			<div class="form-group">
@@ -115,6 +114,9 @@
 			</div>
 	 		</table>
 			</div>
+			<div class="form-field">
+     	<button type="submit" class="btn btn-raised btn-success pull-right"> Done </button>
+     	</div>
   	</form>
     </div>
      <!--      <div class="col-md-3 well" role="complementary">
