@@ -17,9 +17,7 @@ function subLoad(){
 }*/
 
 
-
 function addRow() {
-	
 	var ITS = document.getElementById("InpTotalSection");
 	var ITSdata = ITS.options[ITS.selectedIndex].value;
 		
@@ -58,7 +56,7 @@ function addRow() {
     myTableDiv.appendChild(table);
  }
 
-
+var flg = 0;
 
 function selSub(){
 	var selSub = document.getElementById("examSubjects");
@@ -70,5 +68,33 @@ function selSub(){
 function markMax(){
 	var getMark = document.getElementById("InpMaxMarks").value;
 	//alert(getMark);
-	document.getElementById("selectedMark").innerHTML = getMark;
+	//document.getElementById("selectedMark").innerHTML = getMark;
+	if(getMark > 100 || getMark <1)
+		{
+		//alert("Check Marks");
+		//document.getElementById("InpMaxMarks").re;
+		flg++;
+		}
+	else
+		flg = 0;
+}
+function rist(){
+	
+	//var mxmrk = document.getElementById("InpMaxMarks").value;
+	var ITS = document.getElementById("InpTotalSection");
+	var ITSdata = ITS.options[ITS.selectedIndex].value;
+
+	var r = confirm("Confirm your Submission");
+	if (r == true) {
+		if(flg==0)
+		return true;
+		else {
+			alert("Check Input");
+			return false;
+		}
+	} 
+	else {
+		return false; 
+	} 
+	
 }

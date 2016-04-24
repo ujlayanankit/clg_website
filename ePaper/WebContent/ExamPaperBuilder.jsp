@@ -76,13 +76,14 @@
     	<div class="row">
     	<div class="col-md-6 col-md-offset-3 well">
     	
-   		<form>
+   		<form onsubmit="return rist();">
 			<div class="form-group">
 			<label for="selectSubject">Subject</label>
-			<select class="form-control" name="selectSubject" id="examSubjects" onchange="selSub()" required>
+			<select class="form-control" name="selectSubject" id="examSubjects" onchange="selSub()" >
   		 	<option value="" selected disabled="disabled">Select  </option>
   		<%	try{
 		   rs=st.executeQuery("Select * from Subject");
+		   
 		  while(rs.next())
 			{%>
 		<option value="<%= rs.getString("Sub_Code") %>">     

@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class authPass
@@ -45,7 +46,14 @@ public class authPass extends HttpServlet {
 		else
 		{
 			System.out.println(" "+ check[0]+ " "+ check[1]+ " "+ check[2] + " "+ check[3]);
-			response.sendRedirect("AuthPassed.jsp");
+			//response.sendRedirect("AuthPassed.jsp");
+			if(check[2].equals("fac"))
+			{
+				HttpSession session = request.getSession(false);
+				session.setAttribute("name", check[1]);
+				session.setAttribute("user_id", check[3]);
+			response.sendRedirect("Faculty/index.jsp");
+			}
 		}
 	}
 	private String[] auth(String user_id, String user_pass ) {
