@@ -9,7 +9,7 @@
 						<td><strong>Phone Number</strong></td>
 						</tr>
 						<tr>
-						<td><strong> <%= "Fac" %></strong></td>
+						<td><strong> <%= request.getParameter("name") %></strong></td>
 						<td><strong> <%= "12344567876" %> </strong></td>
 						</tr>
 						

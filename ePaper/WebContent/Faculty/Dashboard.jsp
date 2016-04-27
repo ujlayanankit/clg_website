@@ -3,7 +3,7 @@
                 <div class="row">
                  
                      <h2> Dashboard</h2>   
-                        <h5>Welcome Sir/Ma'am , Love to see you back. </h5>
+                        <h5>Welcome <%= request.getParameter("name") %> , Love to see you back. </h5>
                     
                 </div>              
                 

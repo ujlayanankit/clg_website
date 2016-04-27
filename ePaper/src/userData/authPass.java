@@ -45,11 +45,14 @@ public class authPass extends HttpServlet {
 		}
 		else
 		{
-			System.out.println(" "+ check[0]+ " "+ check[1]+ " "+ check[2] + " "+ check[3]);
+			System.out.println(" "+ check[0]+ " "+ check[1]+ " "+ check[2] + " "+ check[3] + " "+ check[4]);
 			//response.sendRedirect("AuthPassed.jsp");
+			if(!check[4].equals("N"))
+			{
 			if(check[2].equals("fac"))
 			{
 				HttpSession session = request.getSession(false);
+				session.setAttribute("email", user_id);
 				session.setAttribute("name", check[1]);
 				session.setAttribute("user_id", check[3]);
 			response.sendRedirect("Faculty/index.jsp");
@@ -58,12 +61,17 @@ public class authPass extends HttpServlet {
 			else if(check[2].equals("stu"))
 			{
 				HttpSession session = request.getSession(false);
+				session.setAttribute("email", user_id);
 				session.setAttribute("name", check[1]);
 				session.setAttribute("user_id", check[3]);
 			response.sendRedirect("Students/index.jsp");
 			}
 			else{
 				response.sendRedirect("AuthFail.jsp");
+			}
+			}
+			else{
+				response.sendRedirect("AuthPassed.jsp");
 			}
 		}
 	}
@@ -72,7 +80,7 @@ public class authPass extends HttpServlet {
 	    Statement st;
 	    ResultSet rs1,rs2;
 	    String pass ="";
-	    String[] rtn ={"","","",""};
+	    String[] rtn ={"","","","",""};
 	     try
 	      {
 	    	//Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -99,6 +107,7 @@ public class authPass extends HttpServlet {
 			    	rtn[1] = rs2.getString("FULL_NAME");
 			    	rtn[2] = rs2.getString("USER_TYPE");
 			    	rtn[3] = Integer.toString(rs2.getInt("USER_ID"));
+			    	rtn[4] = rs2.getString("IS_AUTHORIZ");
 		    	}
 		    	else
 		    	{
@@ -106,6 +115,7 @@ public class authPass extends HttpServlet {
 		    		rtn[1] = "";
 		    		rtn[2] = "";
 		    		rtn[3] = "";
+		    		rtn[4] = "";
 		    	}
 		    }
 		
