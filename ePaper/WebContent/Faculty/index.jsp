@@ -31,8 +31,31 @@
     //session.removeAttribute("email");
     String User_Id = (String) session.getAttribute("user_id");
     //session.removeAttribute("user_id");
+    String dsgntn="";
+    String brName = "";
+    int brCrd=0,phone=0;
+    Date date= null;
+    try{
+    rs = st.executeQuery("SELECT * FROM `FACULTY` WHERE `FAC_ID` ='"+User_Id+"'");
+    while(rs.next()){
+    brCrd = rs.getInt("Branch_CODE");
+    date = rs.getDate("JOIN_DATE");
+    phone = rs.getInt("PHONE");
+    dsgntn = rs.getString("Design");
+    }
+    rs = st.executeQuery("SELECT `Br_Name` FROM `Branch` WHERE `Br_code` = '"+brCrd+"'");
+    
+    while(rs.next()){
+    brName = rs.getString("Br_Name");
+    }
+    Names = Names.replace(" ", "%20");
+    brName = brName.replace(" ", "%20");
+    dsgntn = dsgntn.replace(" ", "%20");
+    }catch(Exception e){}
      %>
-    <%	 
+     
+    <%	
+    System.out.print(Names+" "+Email+" "+User_Id+" "+brName+" "+date+" "+phone+" "+dsgntn); 
     if(Names== null){
     	//response.sendRedirect("../AuthFail.jsp");
     } %>
@@ -244,8 +267,7 @@
 	<script type="text/javascript">
 	function ldProfile(){
 		
-    
-      $("#loadProfile").load("FacProfile.jsp?name="+<%= Names %>);
+      $("#loadProfile").load("FacProfile.jsp?name="+'<%= Names %>'+"&email="+'<%= Email%>'+"&uID="+'<%= User_Id %>'+"&brname="+'<%= brName%>'+"&date="+'<%= date%>'+"&phone="+'<%= phone %>'+"&dsntn="+'<%= dsgntn%>');
       $("#loadProfile").show();
       $("#loadExamPrep").hide();
       $("#loadExamForm").hide();

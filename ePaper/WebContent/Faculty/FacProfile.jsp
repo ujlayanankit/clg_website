@@ -1,3 +1,12 @@
+<%
+String Name = request.getParameter("name");
+String Phone = request.getParameter("phone");
+String Email = request.getParameter("email");
+String design = request.getParameter("dsntn");
+String U_ID = request.getParameter("uID");
+String Date = request.getParameter("date");
+String Branch = request.getParameter("brname");
+ %>
 
 		<div class="row" id="profy">
 			
@@ -9,8 +18,8 @@
 						<td><strong>Phone Number</strong></td>
 						</tr>
 						<tr>
-						<td><strong> <%= request.getParameter("name") %></strong></td>
-						<td><strong> <%= "12344567876" %> </strong></td>
+						<td><strong> <%= Name %></strong></td>
+						<td><strong> <%= Phone %> </strong></td>
 						</tr>
 						
 						<tr class="text-danger">
@@ -19,8 +28,8 @@
 						</tr>
 						
 						<tr>
-						<td><strong> <%= "mail@gmail.com" %> </strong></td>
-						<td><strong> <%= "Ass. Prof. " %> </strong></td>
+						<td><strong> <%= Email %> </strong></td>
+						<td><strong> <%= design %> </strong></td>
 						</tr>
 									
 						<tr class="text-danger">
@@ -29,8 +38,8 @@
 						</tr>
 						<tr>
 						
-						<td><strong> <%= "1229213" %> </strong></td>
-						<td><strong> <%= "10-08-2012" %></strong></td>
+						<td><strong> <%= U_ID %> </strong></td>
+						<td><strong><%= Date %></strong></td>
 						</tr>
 						
 						<tr class="text-danger"> 
@@ -39,7 +48,7 @@
 						</tr>
 						
 						<tr>
-						<td> <strong>	<%= "IT" %> </strong> </td>
+						<td> <strong>	<%= Branch %> </strong> </td>
 						
 						<td><a href="#" class="btn btn-success btn-sm" onclick="edtprfy()">Edit Profile</a></td>
 						</tr>
@@ -52,8 +61,7 @@
     
     <script type="text/javascript">
 	function edtprfy(){
-		
-      $("#edprofy").load("editProfile.jsp");
+		  $("#edprofy").load("editProfile.jsp?name="+'<%= Name.replace(" ", "%20") %>'+"&email="+'<%= Email%>'+"&uID="+'<%= U_ID %>'+"&brname="+'<%= Branch.replace(" ", "%20") %>'+"&date="+'<%= Date%>'+"&phone="+'<%= Phone %>'+"&design"+'<%= design.replace(" ", "%20")%>');
       $("#edprofy").show();
       $("#profy").hide();}
 </script>

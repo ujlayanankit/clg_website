@@ -51,7 +51,7 @@ public class authPass extends HttpServlet {
 			{
 			if(check[2].equals("fac"))
 			{
-				HttpSession session = request.getSession(false);
+				HttpSession session = request.getSession(true);
 				session.setAttribute("email", user_id);
 				session.setAttribute("name", check[1]);
 				session.setAttribute("user_id", check[3]);
@@ -60,7 +60,7 @@ public class authPass extends HttpServlet {
 			
 			else if(check[2].equals("stu"))
 			{
-				HttpSession session = request.getSession(false);
+				HttpSession session = request.getSession(true);
 				session.setAttribute("email", user_id);
 				session.setAttribute("name", check[1]);
 				session.setAttribute("user_id", check[3]);
