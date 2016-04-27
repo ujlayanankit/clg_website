@@ -64,7 +64,7 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="index.jsp"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a onclick="ldProfile()"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                          <li><a href="../SignIn.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -116,6 +116,7 @@
                    <div class="col-md-12" id="loadExamForm" style="display: none;"></div>
                 	<div class="col-md-12" id="loadresult" style="display: none;"></div>
                      <div class="col-md-12" id="loadassign" style="display: none;"></div>
+                      <div class="col-md-12" id="loadProfile" style="display: none;"></div>
                 	  <div class="col-md-12" id="testid"></div>
                 </div>
                  <!-- /. ROW  -->
@@ -152,6 +153,7 @@
       $("#testid").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
+      $("#loadProfile").hide();
 	}
 	</script>
 		<script>
@@ -164,6 +166,7 @@
       $("#testid").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
+      $("#loadProfile").hide();
 
 	}
 	</script>
@@ -176,6 +179,7 @@
       $("#loadExamPrep").hide();
       $("#loadExamForm").hide();
       $("#loadassign").hide();
+      $("#loadProfile").hide();
 	}
 	</script>
 	 <script>
@@ -188,6 +192,7 @@
       $("#loadExamPrep").hide();
       $("#loadExamForm").hide();
       $("#loadresult").hide();
+		$("#loadProfile").hide();
 	}
 	</script>
 	 <script>
@@ -200,11 +205,26 @@
       $("#loadExamForm").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
-     
+     $("#loadProfile").hide();
       
 	}
 	</script>
 	
+	 <script>
+	function ldProfile(){
+		
+    
+      $("#loadProfile").load("StuProfile.jsp");
+      $("#loadProfile").show();
+      $("#loadExamPrep").hide();
+      $("#loadExamForm").hide();
+      $("#loadresult").hide();
+      $("#loadassign").hide();
+      $("#testid").hide();
+     
+      
+	}
+	</script>
 	<!--
 	 <script>
 	function dashboard(){

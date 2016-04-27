@@ -1,63 +1,14 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
-    <head>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="../js/jquery.min.js"></script>
-  <script src="../js/bootstrap.min.js"></script>
-
-  
-    	<!-- meta character set -->
-        <meta charset="utf-8">
-		<!-- Always force latest IE rendering engine or request Chrome Frame -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Assignment Portal</title>		
-		<!-- Meta Description -->
-        <meta name="description" content="Blue One Page Creative HTML5 Template">
-        <meta name="keywords" content="one page, single page, onepage, responsive, parallax, creative, business, html5, css3, css3 animation">
-        <meta name="author" content="Muhammad Morshed">
-		
-		<!-- Mobile Specific Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		
-		<!-- CSS
-		================================================== -->
-		
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-		
-		<!-- Fontawesome Icon font -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-		<!-- bootstrap.min -->
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-		<!-- bootstrap.min -->
-     	<link rel="stylesheet" href="css/slit-slider.css">
-		<!-- bootstrap.min -->
-        <link rel="stylesheet" href="css/animate.css">
-		<!-- Main Stylesheet -->
-        <link rel="stylesheet" href="css/main.css">
-         <link rel="stylesheet" href="css/logincss.css">
-
-		<!-- Modernizer Script for old Browsers -->
-        <script src="js/modernizr-2.6.2.min.js"></script>
-        <script src="js/loginjs.js"></script>
-    </head>
-	
-    <body id="body">
-    <div class="bs-docs-header well" id="content" tabindex="-1">
-     <div class="container">
+   
+     
       <h1 class="text-center">Meerut Institute of Technology</h1>
-	  <center><a href="#">Subject Name %$Name%$</a></center>
-	  <center><a href="#">Assignment Number $%NO%$</a></center>
-	  <h5 class="text-right">Deadline:    &$$&</h5>
-       <p>Total Marks &% Marks%$</p>
+	  <center><a href="#">Subject Name : Mobile Computing<!-- Put Code Here --></a></center>
+	  <center><a href="#">Assignment Number: 2 <!-- Put Code Here --></a></center>
+	  <h5 class="text-right"><b> Deadline: 30th April,16 <!-- Put Code Here --></b></h5>
+       <p> <b>Total Marks: 50 <!-- Put Code Here --></b></p>
         <div id="countdown"class="pull-right"></div>
-        </div>
-        </div>
+       
+       
     
 	<!--
 	<div class="container">
@@ -107,9 +58,9 @@
     
 	
 	
-    <div class="container bs-docs-container"> 
-    <div class="row">
-    <div class="col-md-10 well" role="main">
+   
+   
+    <div class="col-md-12">
 	
    <!-- <h1 class="panel-title">
                                             <a><b>Ques 1 :</b> What is the output of the following program?<div><br></div>
@@ -128,8 +79,9 @@
 
 					<!-- Questioning starts here -->
 					
+					
+					
 						<div id="secA" class="well" >
-						<h1> Section A</h1>
 						<a><b>Ques 1 :</b></a>
 						<div class="form-group">
 							 <textarea class="form-control" rows="5" id="comment"></textarea>
@@ -142,7 +94,17 @@
 							<textarea class="form-control" rows="5" id="comment"></textarea>
 						</div>
 						
+						<a><b>Ques 3 :</b></a>
+						<div class="form-group">
+							<textarea class="form-control" rows="5" id="comment"></textarea>
 						</div>
+						
+						
+						</div>
+						
+						
+						
+				<!--		
 						
 						<div id="secB" class="well" style="display: none">
 						<h1>Section B</h1>
@@ -178,6 +140,8 @@
 						
 					</div>
 						
+						
+						-->
 						<!--
 						<div id="Show_All" class="well">
 						<h4>Show_All</h4>
@@ -196,16 +160,20 @@
 										
     </div>
 	
+	<div  class="col-md-5 col-md-offset-4">
+	<a href="index.jsp" class="btn btn-info" role="button">Go Back</a>
+  <a href="#" class="btn btn-info" role="button">Save Assignment</a>
+  <a href="#" class="btn btn-info" role="button">Submit Assignment</a>
 	
+	</div>
 	
-	
-	
-										
+<!--
+											
    <div class="col-md-2" role="complementary">
     <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix well">
      <ul class="nav bs-docs-sidenav">
       <li class="">
-      <!--  forloop for section -->
+     
 		
 
 		
@@ -220,7 +188,7 @@
 	
 	
 		
-       <!--  
+        
         <ul class="nav"> 
         <li class=""><a href="#">Ques. 1</a></li>
         <li class=""><a href="#">Ques. 2</a></li> 
@@ -228,7 +196,7 @@
         <li class=""><a href="#">Ques. 4</a></li>
         <li class=""><a href="#">Ques. 5</a></li> 
         <li class=""><a href="#">Ques. 6</a></li>
-        </ul>  ->
+        </ul>  
       </li>
       <li class="">
        <a href="#">Section B</a>
@@ -240,18 +208,18 @@
         <li class=""><a href="#">Ques. 4</a></li>
         <li class=""><a href="#">Ques. 5</a></li> 
     
-        </ul>  ->
+        </ul>  
       </li>
       
        <li class="">
        <a href="#">Section C</a>
-         <!--   <ul class="nav">
+            <ul class="nav">
           <li class=""><a href="#">Ques. 1</a></li>
         <li class=""><a href="#">Ques. 2</a></li> 
         <li class=""><a href="#">Ques. 3</a></li>
      
     
-        </ul>    -->
+        </ul>    
       </li>
       </ul>
      </nav>
@@ -259,13 +227,9 @@
 
 </div>
 </div>
+-->
 
-	<div class="container">
-	<a href="index.jsp" class="btn btn-info" role="button">Go Back</a>
-  <a href="#" class="btn btn-info" role="button">Save Assignment</a>
-  <a href="#" class="btn btn-info" role="button">Submit Assignment</a>
-  
-</div>
+	
 
 
 
@@ -307,7 +271,7 @@ setInterval(function () {
 	-->
 	
 	
-	
+<!--	
 	<script type="text/javascript">
 		function secBdis(){
 			$(document).ready(function(){
@@ -349,12 +313,4 @@ setInterval(function () {
 		}
 	</script>
 	
-	
-	
-	
-	
-	
-	
-	
-</body>
-</html>
+-->

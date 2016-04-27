@@ -1,3 +1,4 @@
+ <%@include file="../include/conn_open.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,6 +19,35 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    
+ 	<script type="text/javascript">
+ 		function secq(){
+ 		var eid = document.getElementById("InputEmailRset").value;
+ 		<% String eid2 = "id"; 
+ 			String eid3;
+ 		%>
+ 		<%= eid2 %> = eid;
+
+		var n = eid.indexOf("@");
+		<% String qs = "ques"; %>
+		if(n>1){ 	
+ 		alert(<%= eid2 %>);
+ 		
+ 		<%
+ 		 try{ 
+ 		
+ 		rs = st.executeQuery("SELECT SECURITY_QUES FROM USERS_ACCOUNTS WHERE USER_EMAIL LIKE '"+eid2+"%'");
+ 			while(rs.next())
+ 			qs = rs.getString("SECURITY_QUES");
+ 			}catch(Exception e){}
+ 		 %>
+ 		 alert(<%= qs %>);
+ 		}
+ 		}
+ 		
+ 	</script>
+    
+    
   </head>
   <body class="main">
    
@@ -47,12 +77,13 @@
   					</div>
   					<div class="form-group">
     				 <label for="InputEmail">Enter your e-mail address below to reset your password.</label>
-   					 <input type="email" class="form-control" id="InputEmailRset" placeholder="Email" name="UEmail" autocomplete="off" required>
+   					 <input type="email" class="form-control" id="InputEmailRset" placeholder="Email" name="UEmail" autocomplete="off" required oninput="secq()">
   					</div>
   					<div class="form-group">
   						
-  						<label for="InputSecurity">Select your Security Question.</label>
-  						<select class="form-control" name="Security" id="secQues">
+  						<label for="InputSecurity"> your Security Question.</label>
+  					<input type="text" class="form-control" id="InputSecurityQues" placeholder="Question" name="secQuestion" autocomplete="off" disabled>
+  					<!--	<select class="form-control" name="Security" id="secQues">
   							<option value="" selected disabled="disabled">Select Your security Question </option>
   							<option value="What time of the day were you born? (hh:mm)">
   								What time of the day were you born? (hh:mm)
@@ -67,7 +98,7 @@
   								What was the house number and street name you lived in as a child?
   							</option>
   							
-  						</select>
+  						</select> -->
   					</div>
   					<div class="form-group">	
   						
@@ -111,6 +142,7 @@
      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
     </script>
+    
     <script type="text/javascript">
      $(document).ready(function() {
      document.body.style.backgroundImage = "url('img/slider/banner.jpg')";

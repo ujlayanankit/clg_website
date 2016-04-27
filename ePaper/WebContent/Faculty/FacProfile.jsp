@@ -1,12 +1,7 @@
 
 		<div class="row" id="profy">
 			
-				<div class="col-md-2">			
-				<img class="img-thumbnail img-circle img-responsive"src="../img/developers/ankit.jpg" alt="Ankit Verma" />
-				<br><br><br>
-				<a href="#" class="btn btn-info btn-lg">Change Img</a>
-				</div>
-			
+						
 			<div class="col-md-10">
 				<table class="table table-striped table-bordered">
 					<tbody><tr class="text-danger">
@@ -14,28 +9,28 @@
 						<td><strong>Phone Number</strong></td>
 						</tr>
 						<tr>
-						<td><strong> Ankit Verma </strong></td>
-						<td><strong> 8899272873 </strong></td>
+						<td><strong> <%= "Fac" %></strong></td>
+						<td><strong> <%= "12344567876" %> </strong></td>
 						</tr>
 						
 						<tr class="text-danger">
 						<td><strong> Registered Email </strong></td>
-						<td><strong> Alternate Number </strong></td>
+						<td><strong> Designation </strong></td>
 						</tr>
 						
 						<tr>
-						<td><strong> mitit.ankit@gmail.com </strong></td>
-						<td><strong> 8475072193 </strong></td>
+						<td><strong> <%= "mail@gmail.com" %> </strong></td>
+						<td><strong> <%= "Ass. Prof. " %> </strong></td>
 						</tr>
 									
 						<tr class="text-danger">
-						<td><strong> Roll No.<strong>  </strong> </strong></td>
-						<td><strong> Admission Date </strong></td>
+						<td><strong> Faculty Id .<strong>  </strong> </strong></td>
+						<td><strong> Join Date </strong></td>
 						</tr>
 						<tr>
 						
-						<td><strong> 1229213007 </strong></td>
-						<td><strong> 10-08-2012 </strong></td>
+						<td><strong> <%= "1229213" %> </strong></td>
+						<td><strong> <%= "10-08-2012" %></strong></td>
 						</tr>
 						
 						<tr class="text-danger"> 
@@ -44,7 +39,7 @@
 						</tr>
 						
 						<tr>
-						<td> <strong>	IT </strong> </td>
+						<td> <strong>	<%= "IT" %> </strong> </td>
 						
 						<td><a href="#" class="btn btn-success btn-sm" onclick="edtprfy()">Edit Profile</a></td>
 						</tr>

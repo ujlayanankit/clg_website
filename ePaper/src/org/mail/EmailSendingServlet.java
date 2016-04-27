@@ -42,9 +42,9 @@ public class EmailSendingServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// reads form fields
-		String recipient = request.getParameter("recipient");
-		String subject = request.getParameter("subject");
-		String content = request.getParameter("content");
+		String recipient =(String) request.getAttribute("recipient");
+		String subject = "Password";
+		String content = (String)request.getAttribute("content");
 
 		String resultMessage = "";
 
@@ -55,9 +55,10 @@ public class EmailSendingServlet extends HttpServlet {
 			ex.printStackTrace();
 			resultMessage = "There were an error: " + ex.getMessage();
 		} finally {
-			request.setAttribute("Message", resultMessage);
-			getServletContext().getRequestDispatcher("/Result.jsp").forward(
-					request, response);
+			//request.setAttribute("Message", resultMessage);
+			//getServletContext().getRequestDispatcher("/Result.jsp").forward(
+				//	request, response);
+			response.sendRedirect("regCnfm.jsp?mail="+recipient);
 		}
 	}
     

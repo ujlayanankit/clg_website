@@ -9,11 +9,14 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.mail.EmailSendingServlet;;
 
 @WebServlet("/AccCreates")
 public class AccCreates extends HttpServlet {
@@ -65,21 +68,27 @@ public class AccCreates extends HttpServlet {
 			new PrintWriter(response.getWriter()).print("<h3>All Fields are Mendatory.</h3>");
 		}
 		
-		dataEntry(full_Name, user_Type, user_Id, user_Email, sec_question, answer);
-		response.sendRedirect("regCnfm.jsp?mail="+user_Email);
+		String pas = dataEntry(full_Name, user_Type, user_Id, user_Email, sec_question, answer);
+		request.setAttribute("recipient", user_Email);
+		
+		request.setAttribute("content"," Your Password is: "+ pas);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/EmailSendingServlet");
+		dispatcher.forward(request, response);
+		//response.sendRedirect("regCnfm.jsp?mail="+user_Email);
 	}
-	void dataEntry(String full_Name,String user_Type,String user_Id, String user_Email, String sec_question, String answer)
+	String dataEntry(String full_Name,String user_Type,String user_Id, String user_Email, String sec_question, String answer)
 	{
 		int u_id = Integer.parseInt(user_Id);
 		char IS_AUTHORIZ = 'N';
-		char IS_VIEW = 'N';
+		
 		String PASSWORD = (new passGen().userPass(user_Email,sec_question,answer));
 		String genP = (new passGen().userPass(PASSWORD));
 		System.out.println("\n User pass:---  "+ genP +"\n\n");
+	
 		String U_PASS = (new passGen().userPass(PASSWORD, genP));
 		Connection com;
 	    Statement st;
-	    System.out.println("INSERT INTO USERS_ACCOUNTS VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+answer+"',"+IS_AUTHORIZ+"','"+IS_VIEW+"','"+PASSWORD+"','"+U_PASS+"')");
+	    System.out.println("INSERT INTO USERS_ACCOUNTS (`FULL_NAME`, `USER_TYPE`, `USER_ID`, `USER_EMAIL`, `SECURITY_QUES`, `IS_AUTHORIZ`, `PASSWORD`, `U_PASS`) VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+IS_AUTHORIZ+"','"+PASSWORD+"','"+U_PASS+"')");
 	      try
 	      {
 	    	  Class.forName("com.mysql.jdbc.Driver");
@@ -88,14 +97,14 @@ public class AccCreates extends HttpServlet {
 	    	//Class.forName("oracle.jdbc.driver.OracleDriver");
 		    //com=DriverManager.getConnection("Jdbc:Oracle:thin:@localhost:1521:xe","Exam","sorry");
 		    st=com.createStatement();
-		    st.executeUpdate("INSERT INTO USERS_ACCOUNTS VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+answer+"','"+IS_AUTHORIZ+"','"+IS_VIEW+"','"+PASSWORD+"','"+U_PASS+"')");
+		    st.executeUpdate("INSERT INTO USERS_ACCOUNTS (`FULL_NAME`, `USER_TYPE`, `USER_ID`, `USER_EMAIL`, `SECURITY_QUES`, `IS_AUTHORIZ`, `PASSWORD`, `U_PASS`) VALUES ('"+full_Name+"','"+user_Type+"',"+u_id+",'"+user_Email+"','"+sec_question+"','"+IS_AUTHORIZ+"','"+PASSWORD+"','"+U_PASS+"')");
 		    com.close();
 		    
 	      }catch(Exception p){
 		  System.err.print(p);
 		  }	
 	     
-	     
+	    return genP;
 	      
 	}
 }

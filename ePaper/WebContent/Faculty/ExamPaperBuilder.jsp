@@ -3,8 +3,8 @@
   
   
     <script type="text/javascript" src="../js/examPaperBuilder.js"></script> 
-         <div id="page-inner">
-       	<div class="row">
+         <div class="col-md-12 col-sm-10">
+			<div class="form-group">
        	<h2 class="pull-left">Prepare Examination Paper</h2> 
        	</div>
        	<hr />
@@ -13,7 +13,7 @@
     	<div class="panel panel-default">
     	<div class="panel-body">
           <div class="row">
-           <div class="col-md-6">
+           <div class="col-md-12">
    		<form method="get" action="examForm.jsp">
    		<div class="form-group">
 			<label for="selectSubject">Branch</label>

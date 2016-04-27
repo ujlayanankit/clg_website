@@ -15,7 +15,7 @@
                     <div class="panel panel-default">
                        <div class="panel-body">
                             <div class="row">
-                               <div class="col-md-6">
+                               <div class="col-md-12">
                                     <form method="get" action="assignForm.jsp">
                                     <div class="form-group">
 			<label for="selectSubject">Branch</label>
@@ -59,17 +59,18 @@
 			<input type="number" class="form-control" id="InpMaxMarks" placeholder="0" name="maxMark" onkeyup="markMax()" required>
   			</div>
   			<div class="form-group">
-			<label for="totalSection">Total Section</label>
-			<select class="form-control" name="totalSection" id="InpTotalSection" onchange="addRow()" required>
+			<label for="totalQuestion">Total Questions</label>
+			<!-- <select class="form-control" name="totalSection" id="InpTotalSection" onchange="addRow()" required>
   			<option value="" selected disabled="disabled">Select  </option>
   			<option value="1" > 1. </option>
   			<option value="2" > 2. </option>
   			<option value="3" > 3. </option>
   			<option value="4" > 4. </option>
   			<option value="5" > 5. </option>
-  			</select>
+  			</select>  -->
+ <input type="number" class="form-control" id="InpMaxQues" placeholder="0" name="maxQues" onkeyup="MaxQues()" required>
   			</div>
-  			<div class="form-group table-responsive">
+  		<!-- 	<div class="form-group table-responsive">
 			<table class="table table-bordered" id="myTableData">
     		<div>
 			<thead> 
@@ -84,9 +85,9 @@
 			<div id="myDynamicTable">
 			</div>
 	 		</table>
-			</div>
+			</div>  -->
 			<div class="form-field">
-  <button class="btn btn-default btn-lg pull-right" style="background:#202020; color:#fff;" onclick="examform()"> Done </button>
+  <button class="btn btn-default btn-lg pull-right" style="background:#202020; color:#fff;" onclick="assignform()"> Done </button>
      	</div>
   	</form>
                                     </div>

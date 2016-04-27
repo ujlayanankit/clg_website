@@ -43,7 +43,9 @@
   				
   			</div>
 		</div>
+		<div class=""container-fluid">
 		<div class="row" id="Assig">
+			</div>
 			</div>
 	</div>
 	<script type="text/javascript">

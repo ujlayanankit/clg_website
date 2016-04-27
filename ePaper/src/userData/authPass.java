@@ -54,6 +54,17 @@ public class authPass extends HttpServlet {
 				session.setAttribute("user_id", check[3]);
 			response.sendRedirect("Faculty/index.jsp");
 			}
+			
+			else if(check[2].equals("stu"))
+			{
+				HttpSession session = request.getSession(false);
+				session.setAttribute("name", check[1]);
+				session.setAttribute("user_id", check[3]);
+			response.sendRedirect("Students/index.jsp");
+			}
+			else{
+				response.sendRedirect("AuthFail.jsp");
+			}
 		}
 	}
 	private String[] auth(String user_id, String user_pass ) {

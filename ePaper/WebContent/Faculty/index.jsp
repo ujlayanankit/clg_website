@@ -71,7 +71,7 @@
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a onclick="ldProfile()"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         
                         <li><a href="../SignIn.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -130,7 +130,7 @@
                   <div class="col-md-12" id="loadExamPrep" style="display: none;"></div>
                    <div class="col-md-12" id="loadExamForm" style="display: none;"></div>
                 <div class="col-md-12" id="loadresult" style="display: none;"></div>
-                
+                 <div class="col-md-12" id="loadProfile" style="display: none;"></div>
                   <div class="col-md-12" id="loadassign" style="display: none;"></div>
                   <div class="col-md-12" id="testid"></div>
                 </div>
@@ -172,6 +172,7 @@
       $("#testid").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
+       $("#loadProfile").hide();
       
 	}
 	</script>
@@ -185,7 +186,7 @@
       $("#testid").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
-
+		 $("#loadProfile").hide();
 	}
 	</script>
 	 <script>
@@ -197,6 +198,7 @@
       $("#loadExamPrep").hide();
       $("#loadExamForm").hide();
       $("#loadassign").hide();
+       $("#loadProfile").hide();
 	}
 	</script>
 	 <script>
@@ -209,6 +211,7 @@
       $("#loadExamPrep").hide();
       $("#loadExamForm").hide();
       $("#loadresult").hide();
+       $("#loadProfile").hide();
 	}
 	</script>
 	 <script>
@@ -221,12 +224,25 @@
       $("#loadExamForm").hide();
       $("#loadresult").hide();
       $("#loadassign").hide();
+     $("#loadProfile").hide();
+      
+	}
+	</script>
+	<script type="text/javascript">
+	function ldProfile(){
+		
+    
+      $("#loadProfile").load("FacProfile.jsp");
+      $("#loadProfile").show();
+      $("#loadExamPrep").hide();
+      $("#loadExamForm").hide();
+      $("#loadresult").hide();
+      $("#loadassign").hide();
+      $("#testid").hide();
      
       
 	}
 	</script>
-	
-
    <script type="text/javascript">
     document.getElementById("logout").onclick = function () {
         location.href = "../SignIn.html";
