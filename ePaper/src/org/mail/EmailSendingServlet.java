@@ -25,8 +25,8 @@ public class EmailSendingServlet extends HttpServlet {
     }
     
     
-   // private String host = "smtp.gmail.com";
-//	private int port = 587;
+   // private String host = "smtp.";
+//	private int port = ;
 	private String user = "";
 	private String pass = "";
 
